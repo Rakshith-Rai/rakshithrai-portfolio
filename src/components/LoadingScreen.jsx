@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoImage from '../assets/images/logo.svg';
 
 const LoadingScreen = ({ finishLoading }) => {
   const [counter, setCounter] = useState(0);
-  
+
   useEffect(() => {
     const timer = setTimeout(() => {
       if (counter < 100) {
@@ -12,10 +13,10 @@ const LoadingScreen = ({ finishLoading }) => {
         finishLoading();
       }
     }, 15); // Adjust speed here
-    
+
     return () => clearTimeout(timer);
   }, [counter, finishLoading]);
-  
+
   // Text animation variants
   const textVariants = {
     initial: {
@@ -39,7 +40,7 @@ const LoadingScreen = ({ finishLoading }) => {
       },
     },
   };
-  
+
   // Particle animation
   const generateParticles = () => {
     const particles = [];
@@ -73,7 +74,7 @@ const LoadingScreen = ({ finishLoading }) => {
     }
     return particles;
   };
-  
+
   return (
     <AnimatePresence>
       <motion.div
@@ -86,7 +87,7 @@ const LoadingScreen = ({ finishLoading }) => {
         <div className="absolute inset-0 overflow-hidden">
           {generateParticles()}
         </div>
-        
+
         {/* Grid lines */}
         <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-10">
           {[...Array(6)].map((_, i) => (
@@ -110,19 +111,32 @@ const LoadingScreen = ({ finishLoading }) => {
             />
           ))}
         </div>
-        
+
         {/* Logo/Name */}
         <motion.div
-          className="relative z-10 mb-12"
+          className="relative z-10 mb-12 flex flex-col items-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          <motion.img
+            src={logoImage}
+            alt="Logo"
+            className="w-24 h-24 mb-4"
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{
+              rotate: { duration: 8, repeat: Infinity, ease: "linear" },
+              scale: { duration: 2, repeat: Infinity, repeatType: "reverse" }
+            }}
+          />
           <h1 className="text-4xl md:text-6xl font-bold">
             <span className="text-secondary">R</span>akshith <span className="text-secondary">R</span>ai
           </h1>
         </motion.div>
-        
+
         {/* Loading bar */}
         <div className="relative w-64 md:w-96 h-1 bg-dark rounded-full overflow-hidden mb-4">
           <motion.div
@@ -131,7 +145,7 @@ const LoadingScreen = ({ finishLoading }) => {
             initial={{ width: 0 }}
           />
         </div>
-        
+
         {/* Loading text */}
         <div className="h-8 relative">
           <AnimatePresence mode="wait">
@@ -185,7 +199,7 @@ const LoadingScreen = ({ finishLoading }) => {
             )}
           </AnimatePresence>
         </div>
-        
+
         {/* Loading percentage */}
         <motion.p
           className="text-lightest font-mono mt-2"
@@ -195,7 +209,7 @@ const LoadingScreen = ({ finishLoading }) => {
         >
           {counter}%
         </motion.p>
-        
+
         {/* Binary code animation in background */}
         <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
           {[...Array(10)].map((_, i) => (

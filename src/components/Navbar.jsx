@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+import logoImage from '../assets/images/logo.svg';
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,6 +73,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
+            <motion.img
+              src={logoImage}
+              alt="Logo"
+              className="w-8 h-8 mr-2"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.8 }}
+            />
             <span className="text-secondary">R</span>akshith <span className="text-secondary">R</span>ai
           </motion.div>
         </Link>
