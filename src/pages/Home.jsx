@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiExternalLink, FiCode, FiAward, FiBookOpen } from 'react-icons/fi';
 
 // Import images
-import profilePlaceholder from '../assets/images/profile-placeholder.svg';
+import profileImage from '../assets/images/profile.JPG';
 import project1Image from '../assets/images/project1.svg';
 import project2Image from '../assets/images/project2.svg';
 import project3Image from '../assets/images/project3.svg';
@@ -341,7 +341,7 @@ const Home = ({ darkMode }) => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src={profilePlaceholder}
+                    src={profileImage}
                     alt="Rakshith Rai"
                     className="w-full h-full object-cover"
                   />
