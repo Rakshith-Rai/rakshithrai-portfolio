@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiExternalLink, FiCode, FiAward, FiBookOpen } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiExternalLink, FiCode, FiAward, FiBookOpen, FiInstagram } from 'react-icons/fi';
 
 // Import images
 import profileImage from '../assets/images/profile.JPG';
@@ -870,6 +870,19 @@ const Home = ({ darkMode }) => {
               >
                 <FiMail size={20} className="group-hover:rotate-12 transition-transform duration-300" />
                 <span>Email</span>
+              </motion.a>
+
+              <motion.a
+                href="https://www.instagram.com/rexie.rai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-gray-300 hover:text-secondary transition-all duration-300 bg-primary/50 px-6 py-3 rounded-full border border-secondary/20 hover:border-secondary/50 group"
+                whileHover={{ y: -5, x: 0 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Instagram"
+              >
+                <FiInstagram size={20} className="group-hover:rotate-12 transition-transform duration-300" />
+                <span>Instagram</span>
               </motion.a>
             </motion.div>
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi';
 
 const Footer = ({ darkMode }) => {
   const currentYear = new Date().getFullYear();
@@ -50,6 +50,15 @@ const Footer = ({ darkMode }) => {
               aria-label="Email"
             >
               <FiMail size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/rexie.rai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-secondary transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <FiInstagram size={20} />
             </a>
           </motion.div>
         </div>
