@@ -2,6 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiExternalLink, FiCode, FiAward, FiBookOpen } from 'react-icons/fi';
 
+// Import images
+import profilePlaceholder from '../assets/images/profile-placeholder.svg';
+import project1Image from '../assets/images/project1.svg';
+import project2Image from '../assets/images/project2.svg';
+import project3Image from '../assets/images/project3.svg';
+import project4Image from '../assets/images/project4.svg';
+
 // Components
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
@@ -37,24 +44,28 @@ const Home = ({ darkMode }) => {
       technologies: ['React', 'JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL'],
       github: 'https://github.com/Rakshith-Rai',
       demo: 'https://www.rakshithrai.xyz',
+      image: project1Image,
     },
     {
       title: 'SURAKSHA (Women Safety App)',
       description: 'A women safety app with user login, favorite contact management, AI chat service based on Gemini API, and SMS alerts for emergency contacts.',
       technologies: ['Flutter', 'Dart', 'SQLite', 'Firebase', 'Gemini API'],
       github: 'https://github.com/Rakshith-Rai',
+      image: project2Image,
     },
     {
       title: 'Question Paper Generation System',
       description: 'A dynamic system enabling teachers to manage questions, define patterns, and generate papers aligned with COs, POs, and Bloom\'s Taxonomy.',
       technologies: ['React', 'PHP', 'MySQL'],
       github: 'https://github.com/Rakshith-Rai',
+      image: project3Image,
     },
     {
       title: 'CodeXspot (Learn Coding Platform)',
       description: 'A platform to facilitate coding tutoring and resale of learning materials with different user roles and permissions.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       github: 'https://github.com/Rakshith-Rai',
+      image: project4Image,
     },
   ];
 
@@ -330,7 +341,7 @@ const Home = ({ darkMode }) => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src="https://via.placeholder.com/400x400?text=Rakshith+Rai"
+                    src={profilePlaceholder}
                     alt="Rakshith Rai"
                     className="w-full h-full object-cover"
                   />
