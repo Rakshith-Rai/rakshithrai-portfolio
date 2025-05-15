@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImage from '../assets/images/logo.svg';
+import logoImage from '../assets/images/logo-single-r.svg';
 
 const LoadingScreen = ({ finishLoading }) => {
   const [counter, setCounter] = useState(0);

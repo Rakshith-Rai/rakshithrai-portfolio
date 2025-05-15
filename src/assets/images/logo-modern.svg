@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0a192f"/>
+  
+  <!-- Stylized RR -->
+  <g fill="#64ffda">
+    <!-- First R -->
+    <path d="M14 14 h10 q6 0 9 3 q3 3 3 7 q0 4 -3 7 q-2 2 -6 3 l8 16 h-8 l-7 -16 h-2 v16 h-6 v-36 Z
+             M20 20 v10 h4 q3 0 4.5 -1.5 q1.5 -1.5 1.5 -3.5 q0 -2 -1.5 -3.5 q-1.5 -1.5 -4.5 -1.5 Z" />
+    
+    <!-- Second R -->
+    <path d="M40 14 h10 q6 0 9 3 q3 3 3 7 q0 4 -3 7 q-2 2 -6 3 l8 16 h-8 l-7 -16 h-2 v16 h-6 v-36 Z
+             M46 20 v10 h4 q3 0 4.5 -1.5 q1.5 -1.5 1.5 -3.5 q0 -2 -1.5 -3.5 q-1.5 -1.5 -4.5 -1.5 Z" 
+          opacity="0.8" />
+  </g>
+  
+  <!-- Decorative elements -->
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="none" stroke="#64ffda" stroke-width="1.5" opacity="0.3"/>
+</svg>
