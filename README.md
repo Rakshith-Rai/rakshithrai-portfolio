@@ -34,8 +34,8 @@ A modern, responsive portfolio website built with React, Vite, Tailwind CSS, and
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/Rakshith-Rai/portfolio.git
-   cd portfolio
+   git clone https://github.com/Rakshith-Rai/rakshithrai-portfolio.git
+   cd rakshithrai-portfolio
    ```
 
 2. Install dependencies
@@ -56,6 +56,14 @@ A modern, responsive portfolio website built with React, Vite, Tailwind CSS, and
 ## Deployment
 
 This website is configured to deploy to GitHub Pages using GitHub Actions. When you push to the main branch, it will automatically build and deploy the website.
+
+### Manual Deployment
+
+You can also deploy manually using the gh-pages package:
+
+```bash
+npm run deploy
+```
 
 ## Custom Domain
 

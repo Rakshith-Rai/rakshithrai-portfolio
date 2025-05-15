@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages with Custom Domain
 
 on:
   push:
@@ -25,6 +25,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Copy CNAME file
+        run: cp public/CNAME dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

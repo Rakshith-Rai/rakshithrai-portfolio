@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +21,37 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle smooth scrolling for hash links
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          window.scrollTo({
+            behavior: 'smooth',
+            top: element.offsetTop - 100
+          });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleNavLinkClick = (e, path) => {
+    if (path.includes('#')) {
+      e.preventDefault();
+      const element = document.getElementById(path.split('#')[1]);
+      if (element) {
+        window.scrollTo({
+          behavior: 'smooth',
+          top: element.offsetTop - 100
+        });
+      }
+      setIsOpen(false);
+    }
   };
 
   const navLinks = [
@@ -59,6 +89,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 <Link
                   to={link.path}
                   className="hover:text-secondary transition-colors duration-300"
+                  onClick={(e) => handleNavLinkClick(e, link.path)}
                 >
                   {link.name}
                 </Link>
@@ -113,7 +144,10 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 <Link
                   to={link.path}
                   className="block py-2 hover:text-secondary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavLinkClick(e, link.path);
+                    setIsOpen(false);
+                  }}
                 >
                   {link.name}
                 </Link>
